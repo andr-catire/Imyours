@@ -1,48 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Página 2</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background-color: #ffe6e6; /* Fondo rosa pastel */
-		}
-		.image-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 10px;
-		}
-		.image-grid img {
-			width: 100%;
-			height: 200px;
-			object-fit: cover;
-			border-radius: 10px;
-		}
-		.music-player {
-			margin-top: 20px;
-			text-align: center;
-		}
-		.music-player img {
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffcccc;
+        }
+        .contenedor-imagenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .imagen {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .reproductor-musica {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 200px;
+            height: 50px;
+            background-color: #ff69b4;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .reproductor-musica img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-	<div class="image-grid">
-		<img src="https://i.pinimg.com/564x/c2/c9/be/c2c9beb6fe0e5a2a6a3e4c8d6fd91f1e.jpg" alt="Imagen 1">
-		<img src="https://i.pinimg.com/564x/e6/96/27/e69627179e6cbc6b8530258197626680.jpg" alt="Imagen 2">
-		<img src="https://i.pinimg.com/564x/e7/b4/50/e7b4504310a0919f3c3f48fd892a9ff2.jpg" alt="Imagen 3">
-		<img src="https://i.pinimg.com/564x/08/0c/59/080c59e56f9ac6497c0fd129f3c68359.jpg" alt="Imagen 4">
-		<img src="https://i.pinimg.com/564x/65/c0/b9/65c0b94cc6dd02549a3ae2600e88d99d.jpg" alt="Imagen 5">
-		<img src="https://i.pinimg.com/564x/26/8e/ec/268eecfb0b9205845dd0f8a9fee37d40.jpg" alt="Imagen 6">
-	</div>
-	<div class="music-player">
-		<img src="https://i.pinimg.com/474x/b9/f3/a5/b9f3a5107640e49c1b949d3c003d618b.jpg" alt="Portada del reproductor">
-		<iframe width="100%" height="166" src="https://www.youtube.com/embed/ge0QEsoSY4E?autoplay=1" frameborder="0" allowfullscreen></iframe>
-		<p>Indila - Love Story</p>
-	</div>
+    <div class="contenedor-imagenes">
+        <img src="https://i.pinimg.com/564x/c2/c9/be/c2c9beb6fe0e5a2a6a3e4c8d6fd91f1e.jpg" alt="" class="imagen">
+        <img src="https://i.pinimg.com/564x/e6/96/27/e69627179e6cbc6b8530258197626680.jpg" alt="" class="imagen">
+        <img src="https://i.pinimg.com/564x/e7/b4/50/e7b4504310a0919f3c3f48fd892a9ff2.jpg" alt="" class="imagen">
+        <img src="https://i.pinimg.com/564x/08/0c/59/080c59e56f9ac6497c0fd129f3c68359.jpg" alt="" class="imagen">
+        <img src="https://i.pinimg.com/564x/65/c0/b9/65c0b94cc6dd02549a3ae2600e88d99d.jpg" alt="" class="imagen">
+        <img src="https://i.pinimg.com/564x/26/8e/ec/268eecfb0b9205845dd0f8a9fee37d40.jpg" alt="" class="imagen">
+    </div>
+    <div class="reproductor-musica">
+        <img src="https://i.pinimg.com/474x/b9/f3/a5/b9f3a5107640e49c1b949d3c003d618b.jpg" alt="">
+        <span>Indila - Love Story</span>
+        <div id="youtube-player"></div>
+        <script>
+            const youtubePlayer = document.getElementById('youtube-player');
+            const videoId = 'ge0QEsoSY4E';
+            const iframe = document.createElement('iframe');
+            iframe.width = '100%';
+            iframe.height = '50px';
+            iframe.frameBorder = '0';
+            iframe.allowFullScreen = true;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`;
+            youtubePlayer.appendChild(iframe);
+        </script>
+    </div>
 </body>
 </html>
