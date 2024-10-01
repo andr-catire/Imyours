@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Mi Página</title>
-	<style>
-		/* Estilos para centrar la imagen y el botón */
-		body {
-			text-align: center;
-			background-image: url('https://i.pinimg.com/236x/13/d2/2a/13d22ae5da69b306edcafc85fa13a359.jpg');
-			background-size: cover;
-			background-position: center;
-		}
-		button {
-			width: 100px; /* Ancho del botón */
-			height: 100px; /* Alto del botón */
-			background-color: #ff69b4; /* Color de fondo del botón */
-			border: none; /* Sin bordes */
-			border-radius: 50%; /* Redondear el botón */
-			cursor: pointer; /* Cursor en forma de mano */
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/736x/73/87/3a/73873a427b51c30f4416bae7033a3e58.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .boton-corazon {
+            width: 200px;
+            height: 200px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .boton-corazon:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-	
-	<!-- Botón en forma de corazón -->
-	<button onclick="location.href='pagina2.html'">❤️</button>
-	
+    <a href="pagina2.html" class="boton-corazon"></a>
 </body>
 </html>
